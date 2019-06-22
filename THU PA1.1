@@ -1,0 +1,74 @@
+// ConsoleApplication1.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+//
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int re[500005];
+int a[500005]; int b[500005]; int c[500005];
+
+//template <class T>
+//inline void read(T& x) {
+//	char c = getchar();
+//	int f = 1;
+//	x = 0;
+//	while (!isdigit(c) && c != '-')c = getchar();
+//	if (c == '-')f = -1, c = getchar();
+//	while (isdigit(c)) {
+//		x = x * 10 + c - '0';
+//		c = getchar();
+//	}
+//	x *= f;
+//}
+//void write(int x) {
+//	if (x < 0) {
+//		putchar('-');
+//		write(-x);
+//		return;
+//	}
+//	if (x > 9) write(x / 10);
+//	putchar(x % 10 + '0');
+//}
+int main() {
+	int n; int cnt1 =1, cnt2=1 ,cnt3 = 1;
+	//ios_base::sync_with_stdio(0); cin.tie(0), cout.tie(0);
+	setvbuf(stdin, new char[1 << 25], _IOFBF, 1 << 20);
+	//std::ios::sync_with_stdio(false);
+	scanf("%d", &n);
+	//read(n);
+	for (int i = 1; i <= n; ++i)
+		scanf("%d", &a[i]);
+		//read(a[i]);//cin >> a[i];
+	for (int i = 1; i <= n; ++i)
+		scanf("%d", &b[i]);
+		//read(b[i]);//cin >> b[i];
+	for (int i = 1; i <= n; ++i)
+		scanf("%d", &c[i]);
+		//read(c[i]);//cin >> c[i];
+	//3 教练轮流拿人
+	int k; 
+	scanf("%d", &k);
+	//read(k);
+	for (int i = 1; i <= n; ++i)
+	{
+		
+			for (; cnt1 <= n; ++cnt1) {
+				if (re[a[cnt1]] == 0) { re[a[cnt1]] = 1; if (a[cnt1] == k) { putchar('A'); return 0; } break; }
+				
+			
+		}//b教练
+	
+			for (; cnt2<=n; ++cnt2) {
+				if (re[b[cnt2]] == 0) {  re[b[cnt2]] = 1; if (b[cnt2] == k) { putchar('B'); return 0; } break; }
+		
+		}
+		//c教练
+
+			for (; cnt3<= n; ++cnt3) {
+				if (re[c[cnt3]] == 0) {  re[c[cnt3]] = 1; if (c[cnt3] == k) { putchar('C'); return 0; } break; }
+
+		}
+	}
+	
+	return 0;
+}
+
